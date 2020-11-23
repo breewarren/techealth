@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  chief_complaint: MyString
+  acuity: 1
+  vitals: MyString
+  hpi: MyString
+  ros: MyString
+  physical_exam: MyString
+  assessment: MyString
+  treatment: MyString
+  provider_id: 1
+  patient_id: 1
+
+two:
+  date: MyString
+  chief_complaint: MyString
+  acuity: 1
+  vitals: MyString
+  hpi: MyString
+  ros: MyString
+  physical_exam: MyString
+  assessment: MyString
+  treatment: MyString
+  provider_id: 1
+  patient_id: 1
