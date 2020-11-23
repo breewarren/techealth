@@ -6,7 +6,7 @@ class CreateDiagnostics < ActiveRecord::Migration[6.0]
       t.boolean :received
       t.string :abnormalities
       t.integer :patient_id
-      t.integer :provider_id
+      t.integer :medical_provider_id
 
       t.timestamps
     end

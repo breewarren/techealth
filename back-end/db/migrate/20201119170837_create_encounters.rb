@@ -10,7 +10,7 @@ class CreateEncounters < ActiveRecord::Migration[6.0]
       t.string :physical_exam
       t.string :assessment
       t.string :treatment
-      t.integer :provider_id
+      t.integer :medical_provider_id
       t.integer :patient_id
 
       t.timestamps

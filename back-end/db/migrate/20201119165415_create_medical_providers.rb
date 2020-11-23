@@ -5,7 +5,7 @@ class CreateMedicalProviders < ActiveRecord::Migration[6.0]
       t.string :image
       t.string :email
       t.string :specialty
-      t.string :password
+      t.string :password_digest
       t.string :credentials
       t.string :practice
 

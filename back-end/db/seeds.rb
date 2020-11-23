@@ -18,9 +18,9 @@ jane_doe = MedicalProvider.create(name: "Jane Doe", image: "https://ca.slack-edg
 john_doe = Patient.create(name: "John Doe", gender: "M", dob: "01/01/90", mrn: 1234567890, age: 30, medications: "Test Medications", allergies: "NKDA", mhx: "Test MHx", shx: "Test SHx", sohx: "Test SoHx", fhx: "Test FHx", insured: true)
 
 #Encounter
-encounter1 = Encounter.create(date: "12/01/20", chief_complaint: "Chest Pain", acuity: 5, vitals: "Test Vitals", hpi: "Test HPI", ros: "Test ROS", physical_exam: "Test PE", assessment: "Test Assessment", treatment: "Test Treatment", provider_id: jane_doe.id, patient_id: john_doe.id)
+encounter1 = Encounter.create(date: "12/01/20", chief_complaint: "Chest Pain", acuity: 5, vitals: "Test Vitals", hpi: "Test HPI", ros: "Test ROS", physical_exam: "Test PE", assessment: "Test Assessment", treatment: "Test Treatment", medical_provider_id: jane_doe.id, patient_id: john_doe.id)
 
 #Diagnostic Testing
-diagnostic1 = Diagnostic.create(date: "12/01/20", description: "EKG", received: true, abnormalities: "N/A", patient_id: john_doe.id, provider_id: jane_doe.id)
+diagnostic1 = Diagnostic.create(date: "12/01/20", description: "EKG", received: true, abnormalities: "N/A", patient_id: john_doe.id, medical_provider_id: jane_doe.id)
 
 puts "Good to go!"

@@ -218,7 +218,11 @@ Feel free to contact me with any questions or suggestions!
 #
 
 ## Functionality
-* UI Flow: Landing Page -> SignUp -> LogIn -> Medical Provider Profile -> View Medical Provider Details -> Create New Encounter -> Select From "My Patients, "All Patients," or "Create New Patient" -> Complete New Encounter Form -> View Encounter Details -> View Patient Details
+* UI Flow: Landing Page -> SignUp -> LogIn -> Medical Provider Profile -> View Medical Provider Details -> Create New Encounter -> Select From "My Patients, "All Patients," or "Create New Patient" -> Complete New Encounter Form -> View Encounter Details -> Order (New) Diagnostic Test -> View Test -> Change to Received -> Abnormalities -> Update Encounter with Treatment/Plan -> Patient Details
+
+1. Patient Exists
+2. Select as "My Patient"
+3. New Encounter with Patient Dropdown List
 
 * Styling: React Bootstrap
 

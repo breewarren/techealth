@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_173824) do
     t.boolean "received"
     t.string "abnormalities"
     t.integer "patient_id"
-    t.integer "provider_id"
+    t.integer "medical_provider_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_173824) do
     t.string "physical_exam"
     t.string "assessment"
     t.string "treatment"
-    t.integer "provider_id"
+    t.integer "medical_provider_id"
     t.integer "patient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_173824) do
     t.string "image"
     t.string "email"
     t.string "specialty"
-    t.string "password"
+    t.string "password_digest"
     t.string "credentials"
     t.string "practice"
     t.datetime "created_at", precision: 6, null: false
