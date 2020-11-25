@@ -576,3 +576,14 @@ active. was inspired by its creators who believe in the importance of an agile, 
 #
 
 ## Thank you! <br> Bree Warren and Abbosbek Muydinboev
+
+
+
+
+
+-readme
+-fix resources on back-end
+-finish resources on controller
+
+stretch:
+-validation/feedback to forms

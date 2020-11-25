@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   resources :diagnostics
   resources :encounters
   resources :medical_providers
-
-  root 'medical_providers#welcome'
-
+  
   #existing users to signin -> auth_controller
   post '/signin', to: 'auth#create'
 
