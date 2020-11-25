@@ -152,23 +152,3 @@ const SignUp = () => {
 }
 
 export default SignUp;
-
-// const emailInput = useSelector(state => state.emailInput)
-// const passwordInput = useSelector(state => state.passwordInput)
-     
-     // const handlePasswordChange = (e) => {
-    //     dispatch({type: 'CHANGE_PASSWORD_INPUT', value: e.target.value})
-    // }
-
-    // const handleClick = () => {
-        // fetch().then()
-        //dispatch is asynchronous
-        // .then(async (user) => {await dispatch({{type: 'SET_USER', user: {email: emailInput, password: passwordInput}}})})
-        // history.push(blahblah)
-        // dispatch({type: 'SET_USER', user: {email: emailInput, password: passwordInput}})
-        // history.push('/home')
-    // }
-
-    /* <input placeholder="Email Address" onChange={(e) => handleEmailChange(e)}/>
-    <input placeholder="Password" onChange={(e) => handlePasswordChange(e)}/>
-    <button onClick={handleClick}>Submit</button> */

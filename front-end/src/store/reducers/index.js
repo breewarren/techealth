@@ -5,10 +5,11 @@ export const initialState = {
     signUpPasswordInput: '',
     signUpImageInput: '',
     signUpCredentialInput: '',
-    signUpPracticeInput: ''
+    signUpPracticeInput: '',
+    signInEmailInput: '',
+    signInPasswordInput: ''
+
     // medicalProviders: [],
-    // emailInput: '',
-    // passwordInput: '',
     // user: {}
 }
 
@@ -66,9 +67,21 @@ export const reducer = (state, action) => {
             }
         break;
 
+        case "CHANGE_SIGN_IN_EMAIL_INPUT":
+            return {
+                ...state,
+                signInEmailInput: action.value
+            }
+        break;
+
+        case "CHANGE_SIGN_IN_PASSWORD_INPUT":
+            return {
+                ...state,
+                signInPasswordInput: action.value
+            }
+        break;
+
        
-
-
         // case "SET_MEDICAL_PROVIDERS": 
         //     return {
         //         ...state, 
