@@ -5,6 +5,12 @@ class MedicalProvidersController < ApplicationController
         render json: "Landing Page"
     end
 
+    #for testing purposes
+    def index
+        medical_providers = MedicalProvider.all
+        render json: medical_providers, include: [:encounters, :patients, :diagnostics]
+    end
+
     #medical provider profile
     def show
         medical_provider = MedicalProvider.find(params[:id])
@@ -17,7 +23,7 @@ class MedicalProvidersController < ApplicationController
         if user.valid?
             render json: {medical_provider: medical_provider}, status: :created
         else
-            render json: {error: "Attempt to Create New Medical Provider was Unsuccessful"}, status: :not_acceptable
+            render json: {error: "Attempt to create new Medical Provider unsuccessful"}, status: :not_acceptable
         end
     end
 
