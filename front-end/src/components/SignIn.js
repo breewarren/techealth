@@ -32,9 +32,7 @@ const SignIn = () => {
             }})
         }
         fetch("http://localhost:3000/signin", postOptions).then(response => response.json())
-        .then(console.log)
-        // .then(async (user) => {await dispatch({{type: 'SET_USER', user: {email: emailInput, password: passwordInput}
-        // .then(async (medical_provider) => {await dispatch({type: 'SET_CURRENT_MEDICAL_PROVIDER', medicalProvider: {email: signInEmailInput, password: signInPasswordInput}})})
+        .then(async (medical_provider) => {await dispatch({type: 'SET_CURRENT_MEDICAL_PROVIDER', medicalProvider: medical_provider})})
     }
 
     return(
