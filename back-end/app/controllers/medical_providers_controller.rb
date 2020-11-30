@@ -16,7 +16,7 @@ class MedicalProvidersController < ApplicationController
         if medical_provider.valid?
             render json: {medical_provider: medical_provider}, status: :created
         else
-            render json: {error: "Attempt to create new Medical Provider unsuccessful"}, status: :not_acceptable
+            render json: {error: "Failed to create new Medical Provider"}, status: :not_acceptable
         end
     end
 

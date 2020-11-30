@@ -18,8 +18,8 @@ const LandingPage = () => {
     return(
         <div>
             <p>Landing Page</p>
-                <Button onClick={handleSignUp}>Sign Up</Button>
-                <Button onClick={handleSignIn}>Sign In</Button>
+                <Button variant="secondary" onClick={handleSignUp}>Sign Up</Button>
+                <Button variant="secondary" onClick={handleSignIn}>Sign In</Button>
         </div>
     )
 }

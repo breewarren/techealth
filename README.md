@@ -581,9 +581,3 @@ active. was inspired by its creators who believe in the importance of an agile, 
 
 
 
--readme
--fix resources on back-end
--finish resources on controller
-
-stretch:
--validation/feedback to forms

@@ -7,12 +7,12 @@ export const initialState = {
     signUpCredentialInput: '',
     signUpPracticeInput: '',
     signInEmailInput: '',
-    signInPasswordInput: ''
+    signInPasswordInput: '',
+    currentMedicalProvider: {}
 
     // medicalProviders: [],
     // user: {}
 }
-
 
 //needed for every item in state
 export const reducer = (state, action) => {
@@ -81,7 +81,13 @@ export const reducer = (state, action) => {
             }
         break;
 
-       
+        case "SET_CURRENT_MEDICAL_PROVIDER":
+            return {
+                ...state,
+                currentMedicalProvider: action.medicalProvider
+            }
+        break;
+
         // case "SET_MEDICAL_PROVIDERS": 
         //     return {
         //         ...state, 
