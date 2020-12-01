@@ -1,14 +1,22 @@
 class MedicalProvidersController < ApplicationController
+    skip_before_action :logged_in?, only: [:create]
 
     def index
         medical_providers = MedicalProvider.all
         render json: medical_providers, include: [:encounters, :patients, :diagnostics]
     end
 
-    def show
-        medical_provider = MedicalProvider.find(params[:id])
+    #uses authorization token 
+    def current_medical_provider
+        medical_provider = self.logged_in?
         render json: medical_provider, include: [:encounters, :patients, :diagnostics]
     end
+
+    #uses ID
+    # def show
+    #     medical_provider = MedicalProvider.find(params[:id])
+    #     render json: medical_provider, include: [:encounters, :patients, :diagnostics]
+    # end
 
     #sign up
     def create
