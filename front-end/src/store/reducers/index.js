@@ -9,7 +9,8 @@ export const initialState = {
     signInEmailInput: '',
     signInPasswordInput: '',
     currentMedicalProvider: null,
-    patientIndex: []
+    patientIndex: [],
+    searchValue: ''
 }
 
 export const reducer = (state, action) => {

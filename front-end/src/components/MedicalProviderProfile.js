@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import history from '../history'
-import {useDispatch, useSelector} from 'react-redux'
+import {useSelector} from 'react-redux'
 import {Button, Jumbotron, Card} from 'react-bootstrap';
 import NavBar from '../components/NavBar'
 import Slider from "react-slick";
@@ -10,6 +10,10 @@ import "slick-carousel/slick/slick-theme.css";
 const MedicalProviderProfile = () => {
     
     const currentMedicalProvider = useSelector(state => state.currentMedicalProvider)
+
+    const toEditProfile = () => {
+        history.push('/medical_provider/edit')
+    }
 
     const toViewAllPatients = () => {
         history.push('/patient/index')
@@ -44,7 +48,7 @@ const MedicalProviderProfile = () => {
                     <h4>{currentMedicalProvider.specialty}</h4>
                     <h5>{currentMedicalProvider.practice}</h5>
                     <br/>
-                    <Button onClick={handleClick} variant="outline-secondary">Edit Profile</Button>
+                    <Button onClick={toEditProfile} variant="outline-secondary">Edit Profile</Button>
                 </Jumbotron>
                 <h2>Active Patients</h2> 
                 <Slider {...settings}>

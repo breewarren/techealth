@@ -119,7 +119,16 @@ const SignUp = () => {
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridPractice">
                                 <Form.Label>Practice Name</Form.Label>
-                                <Form.Control onChange={(e) => handlePracticeChange(e)} type="practice" placeholder="Enter Practice Name" />
+                                <Form.Control onChange={(e) => handlePracticeChange(e)} as="select" defaultValue="">
+                                    <option>Select Practice...</option>
+                                    <option value="Houston Emergency Medicine Associates">Houston Emergency Medicine Associates</option>
+                                    <option value="Family Medicical Practice of Houston">Family Medicical Practice of Houston</option>
+                                    <option value="Houston Center of General Surgery">Houston Center of General Surgery</option>
+                                    <option value="Internal Medicine Sepcialists of Houston">Internal Medicine Sepcialists of Houston</option>
+                                    <option value="Houston Women's Health Group">Houston Women's Health Group</option>
+                                    <option value="Pediatric Associates of Houston">Pediatric Associates of Houston</option>
+                                    <option value="Houston Physicians of Psychiatry">Houston Physicians of Psychiatry</option>
+                                </Form.Control>
                             </Form.Group>
                         </Form.Row>
 
