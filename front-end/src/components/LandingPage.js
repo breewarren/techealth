@@ -1,9 +1,6 @@
-import React, {useEffect} from 'react'
-//useEffect replaces componentDidMount
+import React from 'react'
 import history from '../history'
-import {useDispatch, useSelector} from 'react-redux'
 import {Button} from 'react-bootstrap';
-
 
 const LandingPage = () => {
 

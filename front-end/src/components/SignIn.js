@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import history from '../history'
 import {useDispatch, useSelector} from 'react-redux'
 import {Button, Form, Col, Card} from 'react-bootstrap';
@@ -31,33 +31,19 @@ const SignIn = () => {
                 password: signInPasswordInput
             }})
         }
+
         fetch("http://localhost:3000/signin", postOptions).then(response => response.json())
-        // .then(console.log)
-        .then(async (medical_provider) => {
-            localStorage.token = medical_provider.token
-            await dispatch({type: 'SET_CURRENT_MEDICAL_PROVIDER', medicalProvider: medical_provider.medical_provider})
+        .then(medicalProvider => {
+            localStorage.token = medicalProvider.token
+            dispatch({type: 'SET_CURRENT_MEDICAL_PROVIDER', medicalProvider: medicalProvider.medical_provider})
         })
         history.push('/medical_provider/profile')
     }
 
-    const handleClick = () => {
-        // history.push('/patient/index')
-        let getOption = {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${localStorage.token}`
-            }
-        }
-
-        fetch("http://localhost:3000/patients", getOption).then(response => response.json())
-        .then(console.log)
-    }
-
     return(
         <div>
-            <p>SignIn Page</p>
             <div className="sign-in-form">
-            <Card style={{width: '25%'}}>
+            <Card style={{width: '50%'}}>
                 <Card.Body>
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Group as={Col} controlId="formGridEmailAddress">
@@ -74,7 +60,6 @@ const SignIn = () => {
                     </Form>
                 </Card.Body>
             </Card> 
-            <Button variant="secondary" onClick={handleClick}>View All Patients</Button>
             </div>
         </div>
     )
@@ -82,24 +67,3 @@ const SignIn = () => {
 
 
 export default SignIn;
-
-// const emailInput = useSelector(state => state.emailInput)
-// const passwordInput = useSelector(state => state.passwordInput)
-     
-     // const handlePasswordChange = (e) => {
-    //     dispatch({type: 'CHANGE_PASSWORD_INPUT', value: e.target.value})
-    // }
-
-    // const handleClick = () => {
-        // fetch().then()
-        //dispatch is asynchronous
-        // .then(async (user) => {await dispatch({{type: 'SET_USER', user: {email: emailInput, password: passwordInput}}})})
-        // history.push(blahblah)
-        // dispatch({type: 'SET_USER', user: {email: emailInput, password: passwordInput}})
-        // history.push('/home')
-    // }
-
-    /* <input placeholder="Email Address" onChange={(e) => handleEmailChange(e)}/>
-    <input placeholder="Password" onChange={(e) => handlePasswordChange(e)}/>
-    <button onClick={handleClick}>Submit</button> */
-

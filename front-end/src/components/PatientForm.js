@@ -1,68 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import history from '../history'
 import {useDispatch, useSelector} from 'react-redux'
-import {Form, Col, Button, Card} from 'react-bootstrap'
+import {Button, Card, Col, Form} from 'react-bootstrap';
 
-const SignUp = () => {
-    const dispatch = useDispatch()
-    const signUpNameInput = useSelector(state => state.signUpNameInput)
-    const signUpSpecialtyInput = useSelector(state => state.signUpSpecialtyInput)
-    const signUpEmailInput = useSelector(state => state.signUpEmailInput)
-    const signUpPasswordInput = useSelector(state => state.signUpPasswordInput)
-    const signUpImageInput = useSelector(state => state.signUpImageInput)
-    const signUpCredentialInput = useSelector(state => state.signUpCredentialInput)
-    const signUpPracticeInput = useSelector(state => state.signUpPracticeInput)
 
-    const handleNameChange = (e) => {
-        dispatch({type: "CHANGE_SIGN_UP_NAME_INPUT", value: e.target.value})
+const PatientForm = () => {
+
+    const handleSubmit = () => {
+
     }
 
-    const handleSpecialtyChange = (e) => {
-        dispatch({type: "CHANGE_SIGN_UP_SPECIALTY_INPUT", value: e.target.value})
-    }
+    const handleChange = () => {
 
-    const handleEmailChange = (e) => {
-        dispatch({type: 'CHANGE_SIGN_UP_EMAIL_INPUT', value: e.target.value})
-    }
-
-    const handlePasswordChange = (e) => {
-        dispatch({type: 'CHANGE_SIGN_UP_PASSWORD_INPUT', value: e.target.value})
-    }
-
-    const handleImageChange = (e) => {
-        dispatch({type: 'CHANGE_SIGN_UP_IMAGE_INPUT', value: e.target.value})
-    }
-
-    const handleCredentialChange = (e) => {
-        dispatch({type: 'CHANGE_SIGN_UP_CREDENTIAL_INPUT', value: e.target.value})
-    }
-
-    const handlePracticeChange = (e) => {
-        dispatch({type: 'CHANGE_SIGN_UP_PRACTICE_INPUT', value: e.target.value})
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        
-        let postOption = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify({ medical_provider: {
-                name: signUpNameInput,
-                specialty: signUpSpecialtyInput,
-                email: signUpEmailInput,
-                password: signUpPasswordInput,
-                image: signUpImageInput,
-                credentials: signUpCredentialInput,
-                practice: signUpPracticeInput,
-            }})
-        }
-
-        fetch("http://localhost:3000/medical_providers", postOption).then(response => response.json())
-        history.push('/signin')
     }
 
     return(
@@ -73,13 +22,13 @@ const SignUp = () => {
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridName">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control onChange={(e) => handleNameChange(e)} type="name" placeholder="Enter Full Name" />
+                            <Form.Label>Patient Name</Form.Label>
+                            <Form.Control onChange={(e) => handleChange(e)} type="name" placeholder="Enter Patient Full Name" />
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridSpecialty">
                                 <Form.Label>Specialty</Form.Label>
-                                <Form.Control onChange={(e) => handleSpecialtyChange(e)} as="select" defaultValue="">
+                                <Form.Control onChange={(e) => handleChange(e)} as="select" defaultValue="">
                                     <option>Select Specialty...</option>
                                     <option value="Emergency Medicine">Emergency Medicine</option>
                                     <option value="Family Medicine">Family Medicine</option>
@@ -96,37 +45,37 @@ const SignUp = () => {
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridEmailAddress">
                             <Form.Label>Email Address</Form.Label>
-                            <Form.Control onChange={(e) => handleEmailChange(e)} type="email" placeholder="Enter Email Address" />
+                            <Form.Control onChange={(e) => handleChange(e)} type="email" placeholder="Enter Email Address" />
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control onChange={(e) => handlePasswordChange(e)} type="password" placeholder="Enter Password" />
+                            <Form.Control onChange={(e) => handleChange(e)} type="password" placeholder="Enter Password" />
                             </Form.Group>
                         </Form.Row>
 
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridImage">
                             <Form.Label>Profile Image</Form.Label>
-                            <Form.Control onChange={(e) => handleImageChange(e)} type="input" placeholder="Enter Profile Image URL" />
+                            <Form.Control onChange={(e) => handleChange(e)} type="input" placeholder="Enter Profile Image URL" />
                             </Form.Group>
 
                             <Form.Group>
-                                <Form.File onChange={(e) => handleImageChange(e)} id="formControlFileUpload" label="Upload Profile Image" />
+                                <Form.File onChange={(e) => handleChange(e)} id="formControlFileUpload" label="Upload Profile Image" />
                             </Form.Group>
                         </Form.Row>
 
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridPractice">
                                 <Form.Label>Practice Name</Form.Label>
-                                <Form.Control onChange={(e) => handlePracticeChange(e)} type="practice" placeholder="Enter Practice Name" />
+                                <Form.Control onChange={(e) => handleChange(e)} type="practice" placeholder="Enter Practice Name" />
                             </Form.Group>
                         </Form.Row>
 
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridCredentials">
                             <Form.Label>Select Provider Credentials: </Form.Label>
-                            <div onChange={(e) => handleCredentialChange(e)} key="inline-radio" className="mb-3">
+                            <div onChange={(e) => handleChange(e)} key="inline-radio" className="mb-3">
                             <Form.Check inline value="MD" label="Doctor of Medicine (MD)" type="radio" id="inline-radio-1" />
                             <Form.Check inline value="DO" label="Doctor of Osteopathic Medicine(DO)" type="radio" id="inline-radio-2" />
                             <Form.Check inline value="DNP" label="Doctor of Nursing Practice (DNP)" type="radio" id="inline-radio-3" />
@@ -146,4 +95,5 @@ const SignUp = () => {
     )
 }
 
-export default SignUp;
+export default PatientForm;
+

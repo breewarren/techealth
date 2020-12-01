@@ -1,4 +1,4 @@
-import {Provider, useDispatch, useSelector} from 'react-redux'
+import {Provider, useDispatch} from 'react-redux'
 import {store} from './store'
 import {Route, Router} from 'react-router'
 import history from './history'
@@ -8,6 +8,10 @@ import SignUp from './components/SignUp'
 import MedicalProviderProfile from './components/MedicalProviderProfile'
 import PatientIndex from './components/PatientIndex'
 import React, {useEffect} from 'react'
+import PatientForm from './components/PatientForm'
+
+//useEffect replaces componentDidMount
+//dispatch replaces setState, passing in action as an argument
 
 function App() {
 
@@ -19,10 +23,13 @@ function App() {
         Authorization: `Bearer ${localStorage.token}`
       }
     }
-    
+
     if (localStorage.token) {
       fetch("http://localhost:3000/medical_provider", getOption).then(response => response.json())
-      .then(medical_provider => dispatch({type: 'SET_CURRENT_MEDICAL_PROVIDER', medicalProvider: medical_provider}))
+      .then(medicalProvider => dispatch({type: 'SET_CURRENT_MEDICAL_PROVIDER', medicalProvider}))
+      
+      fetch("http://localhost:3000/patients", getOption).then(response => response.json())
+      .then(patients => dispatch({type: 'SET_PATIENT_INDEX', patients}))
     }
   })
 
@@ -33,6 +40,7 @@ function App() {
       <Route exact path ='/signin' component={() => <SignIn/>}/>
       <Route exact path ='/medical_provider/profile' component={() => <MedicalProviderProfile/>}/>
       <Route exact path ='/patient/index' component={() => <PatientIndex/>}/>
+      <Route exact path ='/patient/new' component={() => <PatientForm/>}/>
     </Router>
   );
 }

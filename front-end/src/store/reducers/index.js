@@ -8,13 +8,10 @@ export const initialState = {
     signUpPracticeInput: '',
     signInEmailInput: '',
     signInPasswordInput: '',
-    currentMedicalProvider: {}
-
-    // medicalProviders: [],
-    // user: {}
+    currentMedicalProvider: null,
+    patientIndex: []
 }
 
-//needed for every item in state
 export const reducer = (state, action) => {
     switch(action.type) {
 
@@ -88,35 +85,12 @@ export const reducer = (state, action) => {
             }
         break;
 
-        // case "SET_MEDICAL_PROVIDERS": 
-        //     return {
-        //         ...state, 
-        //         medicalProviders: action.medicalProviders
-        //     }
-        // break;
-
-        // // dispatch({type: 'CHANGE_EMAIL_INPUT', value: e.target.value})
-        // case "CHANGE_EMAIL_INPUT": 
-        //     return {
-        //         ...state, 
-        //         emailInput: action.value
-        //     }
-        // break;
-
-        // case "CHANGE_PASSWORD_INPUT": 
-        //     return {
-        //         ...state, 
-        //         passwordInput: action.value
-        //     }
-        // break;
-        
-        // // dispatch({type: 'SET_USER', user: {email: emailInput, password: passwordInput}})
-        // case "SET_USER": 
-        //     return {
-        //         ...state, 
-        //         user: action.user
-        //     }
-        // break;
+        case "SET_PATIENT_INDEX": 
+            return {
+                ...state, 
+                patientIndex: action.patients
+            }
+        break;
 
     }
     return state
