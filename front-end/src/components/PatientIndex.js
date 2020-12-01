@@ -2,12 +2,15 @@ import React, {useEffect} from 'react'
 import history from '../history'
 import {useDispatch, useSelector} from 'react-redux'
 
-const Home = () => {
 
-    const user = useSelector(state => state.user)
+const PatientIndex = () => {
+
     return(
-        <h1>Home: {user.email}</h1>
+        <div>
+            <p>Hi</p>
+        </div>
     )
 }
 
-export default Home;
+export default PatientIndex;
+

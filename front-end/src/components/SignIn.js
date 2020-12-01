@@ -32,7 +32,25 @@ const SignIn = () => {
             }})
         }
         fetch("http://localhost:3000/signin", postOptions).then(response => response.json())
-        .then(async (medical_provider) => {await dispatch({type: 'SET_CURRENT_MEDICAL_PROVIDER', medicalProvider: medical_provider})})
+        // .then(console.log)
+        .then(async (medical_provider) => {
+            localStorage.token = medical_provider.token
+            await dispatch({type: 'SET_CURRENT_MEDICAL_PROVIDER', medicalProvider: medical_provider.medical_provider})
+        })
+        history.push('/medical_provider/profile')
+    }
+
+    const handleClick = () => {
+        // history.push('/patient/index')
+        let getOption = {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${localStorage.token}`
+            }
+        }
+
+        fetch("http://localhost:3000/patients", getOption).then(response => response.json())
+        .then(console.log)
     }
 
     return(
@@ -56,6 +74,7 @@ const SignIn = () => {
                     </Form>
                 </Card.Body>
             </Card> 
+            <Button variant="secondary" onClick={handleClick}>View All Patients</Button>
             </div>
         </div>
     )

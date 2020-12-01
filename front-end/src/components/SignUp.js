@@ -47,7 +47,7 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         
-        let postOptions = {
+        let postOption = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -64,7 +64,7 @@ const SignUp = () => {
             }})
         }
 
-        fetch("http://localhost:3000/medical_providers", postOptions).then(response => response.json())
+        fetch("http://localhost:3000/medical_providers", postOption).then(response => response.json())
         history.push('/signin')
     }
 
