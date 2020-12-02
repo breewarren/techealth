@@ -7,18 +7,15 @@ import {Card, CardColumns, Button, Modal} from 'react-bootstrap';
 import PatientDetailsModal from '../components/PatientDetailsModal.js'
 
 const PatientIndex = () => {
-
-    // letstate = {
-    //     searchValue: ''
-    // }
     
     const patientIndex = useSelector(state => state.patientIndex)
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = React.useState(false)
 
     return(
         <div>
             <NavBar/>
             <SearchBar/>
+            <br/>
             <CardColumns>
             {patientIndex.map(patient => {
                 return (

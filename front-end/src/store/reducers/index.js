@@ -10,7 +10,7 @@ export const initialState = {
     signInPasswordInput: '',
     currentMedicalProvider: null,
     patientIndex: [],
-    searchValue: ''
+    searchInput: ''
 }
 
 export const reducer = (state, action) => {
@@ -90,6 +90,20 @@ export const reducer = (state, action) => {
             return {
                 ...state, 
                 patientIndex: action.patients
+            }
+        break;
+
+        case "CHANGE_SEARCH_INPUT": 
+            return {
+                ...state, 
+                searchInput: action.value
+            }
+        break;
+
+        case "CHANGE_PATIENT_INDEX": 
+            return {
+                ...state, 
+                patientIndex: action.value
             }
         break;
 
