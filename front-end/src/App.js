@@ -10,6 +10,7 @@ import PatientIndex from './components/PatientIndex'
 import React, {useEffect} from 'react'
 import PatientForm from './components/PatientForm'
 import EncounterForm from './components/EncounterForm'
+import MedicalProviderEditForm from './components/MedicalProviderEditForm'
 
 
 //useEffect replaces componentDidMount
@@ -44,6 +45,7 @@ function App() {
       <Route exact path ='/patient/index' component={() => <PatientIndex/>}/>
       <Route exact path ='/patient/new' component={() => <PatientForm/>}/>
       <Route exact path ='/encounter/new' component={() => <EncounterForm/>}/>
+      <Route exact path ='/medical_provider/edit' component={() => <MedicalProviderEditForm/>}/>
     </Router>
   );
 }

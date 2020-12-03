@@ -15,6 +15,7 @@ const NavigationBar = () => {
         <Navbar bg="light" expand="lg">
         {/* <img alt="" src="/logo.svg" width="30"height="30" className="d-inline-block align-top"/>{' '} */}
             <Navbar.Brand href="/">techealth</Navbar.Brand>
+            <Navbar.Text>your electronic health records, engineered by computer science</Navbar.Text>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             </Navbar.Collapse>

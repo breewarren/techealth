@@ -15,7 +15,7 @@ const MedicalProviderProfile = () => {
 
 
     const toEditProfile = () => {
-        // history.push('/medical_provider/edit')
+        history.push('/medical_provider/edit')
     }
 
     const toViewAllPatients = () => {
