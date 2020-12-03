@@ -137,7 +137,7 @@ const SignUp = () => {
                             <Form.Label>Select Provider Credentials: </Form.Label>
                             <div onChange={(e) => handleCredentialChange(e)} key="inline-radio" className="mb-3">
                             <Form.Check inline value="MD" label="Doctor of Medicine (MD)" type="radio" id="inline-radio-1" />
-                            <Form.Check inline value="DO" label="Doctor of Osteopathic Medicine(DO)" type="radio" id="inline-radio-2" />
+                            <Form.Check inline value="DO" label="Doctor of Osteopathic Medicine (DO)" type="radio" id="inline-radio-2" />
                             <Form.Check inline value="DNP" label="Doctor of Nursing Practice (DNP)" type="radio" id="inline-radio-3" />
                             <Form.Check inline value="NP" label="Nurse Practicioner (NP)" type="radio" id="inline-radio-4" />
                             <Form.Check inline value="PA" label="Physician Assistant (PA)" type="radio" id="inline-radio-5" /> 

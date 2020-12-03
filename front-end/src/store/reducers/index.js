@@ -51,7 +51,10 @@ export const initialState = {
     createEncounterPsychInput: '',
     createEncounterSkinHairInput: '',
     createEncounterAssessmentInput: '',
-    createEncounterTreatmentInput: ''
+    createEncounterTreatmentInput: '',
+
+    //edit medical provider
+    editMedicalProviderNameInput: ''
 }
 
 export const reducer = (state, action) => {
@@ -372,8 +375,12 @@ export const reducer = (state, action) => {
             }
         break;
         
-
-        
+        case "CHANGE_EDIT_MEDICAL_PROVIDER_NAME_INPUT": 
+            return {
+            ...state, 
+            editMedicalProviderNameInput: action.value
+            }
+        break;
 
     }
     return state
