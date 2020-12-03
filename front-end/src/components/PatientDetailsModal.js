@@ -23,7 +23,7 @@ function PatientDetailsModal (props) {
             <p>{patient.mhx}</p>
             <h5>Surgical History </h5>
             <p>{patient.shx}</p>
-            <h5>Fmaily History </h5>
+            <h5>Family History </h5>
             <p>{patient.fhx}</p>
             <h5>Social History </h5>
             <p>{patient.sohx}</p>

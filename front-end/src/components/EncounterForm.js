@@ -236,9 +236,9 @@ const EncounterForm = () => {
                                 <Form.Label>Patient</Form.Label>
                                 <Form.Control onChange={(e) => handlePatientChange(e)} as="select" defaultValue="">
                                     <option>Select Patient...</option>
-                                    {/* {currentMedicalProvider.patients.map(patient => {
+                                    {currentMedicalProvider.patients.map(patient => {
                                         return <option value={patient.id}>{patient.name}, MRN: {patient.mrn}</option>
-                                    })} */}
+                                    })}
                                 </Form.Control>
                             </Form.Group>
 
