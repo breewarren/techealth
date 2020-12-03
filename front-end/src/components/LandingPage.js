@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import history from '../history'
-import {Button} from 'react-bootstrap';
+import {Button, Card} from 'react-bootstrap';
+import {useSelector} from 'react-redux'
+
 
 const LandingPage = () => {
+
+    const currentMedicalProvider = useSelector(state => state.currentMedicalProvider)
 
     const handleSignUp = () => {
         history.push('/signup')
@@ -12,12 +16,26 @@ const LandingPage = () => {
         history.push('/signin')
     }
 
+    // useEffect(() => {
+    //     if (currentMedicalProvider) {
+    //         history.push('/medical_provider/profile')
+    //     }
+    // })
+
     return(
-        <div>
-            <p>Landing Page</p>
-                <Button variant="secondary" onClick={handleSignUp}>Sign Up</Button>
-                <Button variant="secondary" onClick={handleSignIn}>Sign In</Button>
-        </div>
+    <div className="landing-page-card">
+        <Card style={{width: '25%'}}>
+            <span>
+            <Card.Header>techealth</Card.Header>
+            <br/>
+            Electronic Health Record Systems
+            <Card.Body>
+                <Button className="landing-page-button" variant="outline-secondary" onClick={handleSignIn}>Sign In</Button>
+                <Button className="landing-page-button" variant="outline-secondary" onClick={handleSignUp}>Sign Up</Button>
+            </Card.Body>
+            </span>
+        </Card> 
+    </div>
     )
 }
 

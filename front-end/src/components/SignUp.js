@@ -146,7 +146,7 @@ const SignUp = () => {
                             </Form.Group>
                         </Form.Row>
 
-                        <Button variant="secondary" type="submit">Create Account</Button>
+                        <Button className="sign-up-button" variant="outline-secondary" type="submit">Create Account</Button>
                     </Form>
                 </Card.Body>
             </Card>

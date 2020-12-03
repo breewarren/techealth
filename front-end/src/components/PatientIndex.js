@@ -1,23 +1,28 @@
-import React, {Component} from 'react'
+import React from 'react'
 import history from '../history'
 import {useDispatch, useSelector} from 'react-redux'
-import NavBar from '../components/NavBar.js'
+import NavigationBar from '../components/NavigationBar.js'
 import SearchBar from '../components/SearchBar.js'
-import {Card, CardColumns, Button, Modal} from 'react-bootstrap';
+import {Card, CardColumns, Button} from 'react-bootstrap';
 import PatientDetailsModal from '../components/PatientDetailsModal.js'
 
 const PatientIndex = () => {
     
     const patientIndex = useSelector(state => state.patientIndex)
+    const searchInput = useSelector(state => state.searchInput)
+    const filterPatientIndex = patientIndex.filter(patient => patient.name.toLowerCase().includes(searchInput.toLowerCase()))
     const [modalShow, setModalShow] = React.useState(false)
 
     return(
         <div>
-            <NavBar/>
+            <NavigationBar/>
+            <div className="patient-index">
+            <br/>
             <SearchBar/>
             <br/>
+            <br/>
             <CardColumns>
-            {patientIndex.map(patient => {
+            {filterPatientIndex.map(patient => {
                 return (
                     <Card key={patient.id}>
                       <Card.Body>
@@ -34,15 +39,15 @@ const PatientIndex = () => {
                         </Card.Text>
                       </Card.Body>
                       <>
-                        <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
-                            View Patient Details
-                        </Button>
+                        <Button className="pt-details-button" variant="outline-secondary" onClick={() => setModalShow(true)}>View Patient Details</Button>
+                        <Button className="pt-assign-button" variant="outline-secondary" onClick={null}>Assign to My Patients</Button>
                         <PatientDetailsModal patient={patient} show={modalShow} onHide={() => setModalShow(false)}/>
                         </>
                     </Card>
                     )
             })}
             </CardColumns>
+            </div>
         </div>
     )
 }

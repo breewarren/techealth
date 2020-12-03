@@ -1,3 +1,105 @@
+.sign-up-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px;
+}
+
+.sign-in-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 1px 1px 3px 1px gray; */
+    /* margin: 100px; */
+    margin-top: 275px;
+}
+
+.mp-profile-page {
+  /* display: flex; */
+  /* align-items: center; */
+  justify-content: center;
+  /* box-shadow: 1px 1px 3px 1px gray; */
+  margin: 100px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.new-encounter-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px;
+}
+
+.landing-page-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 100px; */
+  margin-top: 325px;
+}
+
+* span {
+  text-align: center;
+}
+
+.mp-profile {
+  margin: 50px;
+}
+
+.patient-index {
+  margin: 35px; 
+}
+
+.search-title {
+  text-align: center;
+}
+
+.pt-details-button {
+  margin-left: 70px;
+  margin-bottom: 25px;
+}
+
+.pt-assign-button {
+  margin-left: 5px;
+  margin-bottom: 25px;
+}
+
+.mp-profile-button {
+  margin-left: 45%;
+  margin-top: 25px;
+}
+
+.encounter-form-button {
+  margin-left: 45%;
+}
+
+.landing-page-button {
+  margin: 2px;
+}
+
+.sign-in-button {
+  margin-left: 38%
+}
+
+.sign-up-button {
+  margin-left: 35%
+}
+
+.mp-image {
+  display: flex;
+  margin-left: 450px;
+  margin-top: 200px
+}
+
+.encounter-details-button {
+  margin-left: 165px;
+  margin-bottom: 25px;
+}
+
 /* html,
 body {
   margin: 0;
@@ -24,30 +126,6 @@ body {
   font-size: 20px;
   background-color: lightskyblue; 
 } */
-
-.sign-up-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* box-shadow: 1px 1px 3px 1px gray; */
-    margin: 100px;
-}
-
-.sign-in-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* box-shadow: 1px 1px 3px 1px gray; */
-    margin: 100px;
-}
-
-.mp-profile-page {
-  /* display: flex; */
-  /* align-items: center; */
-  justify-content: center;
-  /* box-shadow: 1px 1px 3px 1px gray; */
-  margin: 100px;
-}
 
 
 

@@ -9,6 +9,8 @@ import MedicalProviderProfile from './components/MedicalProviderProfile'
 import PatientIndex from './components/PatientIndex'
 import React, {useEffect} from 'react'
 import PatientForm from './components/PatientForm'
+import EncounterForm from './components/EncounterForm'
+
 
 //useEffect replaces componentDidMount
 //dispatch replaces setState, passing in action as an argument
@@ -41,6 +43,7 @@ function App() {
       <Route exact path ='/medical_provider/profile' component={() => <MedicalProviderProfile/>}/>
       <Route exact path ='/patient/index' component={() => <PatientIndex/>}/>
       <Route exact path ='/patient/new' component={() => <PatientForm/>}/>
+      <Route exact path ='/encounter/new' component={() => <EncounterForm/>}/>
     </Router>
   );
 }

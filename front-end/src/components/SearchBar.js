@@ -1,28 +1,23 @@
 import React from 'react'
-import history from '../history'
 import {useDispatch, useSelector} from 'react-redux'
-import {Button, FormControl, Form} from 'react-bootstrap';
+import {FormControl, Form, Card} from 'react-bootstrap';
 
 
 const SearchBar = () => {
 
     const dispatch = useDispatch()
-    const patientIndex = useSelector(state => state.patientIndex)
-    const searchInput = useSelector(state => state.searchInput)
-    const updatePatients = patientIndex.filter(patient => {
-        return patient.name.toLowerCase().includes(searchInput)
-    })
 
     const handleSearch = (e) => {
         dispatch({type: "CHANGE_SEARCH_INPUT", value: e.target.value})
-        dispatch({type: "CHANGE_PATIENT_INDEX", value: updatePatients})
     }
 
     return(
     <div>
-      <Form>
-      <FormControl onChange={(e) => handleSearch(e)} type="text" placeholder="Search Patients by Name" className="mr-sm-2" />
-    </Form>
+            <Form>
+            <h6 className="search-title">Search Patients by Name</h6>
+             <FormControl onChange={(e) => handleSearch(e)} type="text" size="lg" className="mr-sm-2" />
+             <br/>
+            </Form>
     </div>
     )
 }

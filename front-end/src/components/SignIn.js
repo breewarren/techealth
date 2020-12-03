@@ -43,7 +43,7 @@ const SignIn = () => {
     return(
         <div>
             <div className="sign-in-form">
-            <Card style={{width: '50%'}}>
+            <Card style={{width: '25%'}}>
                 <Card.Body>
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Group as={Col} controlId="formGridEmailAddress">
@@ -56,7 +56,7 @@ const SignIn = () => {
                         <Form.Control onChange={(e) => handlePasswordChange(e)} type="password" placeholder="Enter Password" />
                         </Form.Group>
                         
-                        <Button variant="outline-secondary" type="submit">Sign In</Button>
+                        <Button className="sign-in-button" variant="outline-secondary" type="submit">Sign In</Button>
                     </Form>
                 </Card.Body>
             </Card> 
