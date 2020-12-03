@@ -3,7 +3,7 @@ class CreateEncounters < ActiveRecord::Migration[6.0]
     create_table :encounters do |t|
       t.string :date
       t.string :chief_complaint
-      t.integer :acuity
+      t.string :acuity
       t.string :vitals
       t.string :hpi
       t.string :ros

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_173824) do
   create_table "encounters", force: :cascade do |t|
     t.string "date"
     t.string "chief_complaint"
-    t.integer "acuity"
+    t.string "acuity"
     t.string "vitals"
     t.string "hpi"
     t.string "ros"
