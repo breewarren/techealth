@@ -42,7 +42,7 @@ encounter5 = Encounter.create(date: "2020-12-02", chief_complaint: "Chest Pain",
 diagnostic1 = Diagnostic.create(date: "2020-12-02", description: "COVID-19 Anterior Nasal Swab", received: false, abnormalities: "Not currently applicable. Please revisit once status of diagnostic testing is no longer pending", patient_id: paige_willis.id, medical_provider_id: jane_doe.id)
 diagnostic2 = Diagnostic.create(date: "2020-11-30", description: "CBC/CMP Blood Panel", received: false, abnormalities: "Not currently applicable. Please revisit once status of diagnostic testing is no longer pending", patient_id: ambreea_warren.id, medical_provider_id: jane_doe.id)
 diagnostic3 = Diagnostic.create(date: "2020-12-01", description: "MRI Head & Neck", received: true, abnormalities: "No abnormalities noted, as there is unremarkable evidence showing potential aneurysm", patient_id: andre_armstead.id, medical_provider_id: jane_doe.id)
-diagnostic2 = Diagnostic.create(date: "2020-12-01", description: "CT Abdomen & Pelvis", received: true, abnormalities: "Indication of a swollen appendix without contrast in the lumen. Possible appendicitis", patient_id: drew_thompson.id, medical_provider_id: jane_doe.id)
+diagnostic4 = Diagnostic.create(date: "2020-12-01", description: "CT Abdomen & Pelvis", received: true, abnormalities: "Indication of a swollen appendix without contrast in the lumen. Possible appendicitis", patient_id: drew_thompson.id, medical_provider_id: jane_doe.id)
 diagnostic5 = Diagnostic.create(date: "2020-12-02", description: "EKG", received: true, abnormalities: "ST elevation noted. Acute myocardial infarction suspected", patient_id: john_doe.id, medical_provider_id: jane_doe.id)
 
 puts "Good to go!"

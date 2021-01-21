@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 100px;
+    margin: -55%;
 }
 
 .sign-in-form {
@@ -11,7 +11,7 @@
     justify-content: center;
     /* box-shadow: 1px 1px 3px 1px gray; */
     /* margin: 100px; */
-    margin-top: 275px;
+    margin-top: -45%;
 }
 
 .mp-profile-page {
@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: center;
   /* margin: 100px; */
-  margin-top: 325px;
+  margin-top: -45%;
 }
 
 * span {
@@ -106,6 +106,10 @@
 
 .delete-account-button {
   margin-left: 5px
+}
+
+.hidden {
+  display: none;
 }
 
 /* html,

@@ -2,6 +2,8 @@ import React from 'react'
 import history from '../history'
 import {useDispatch, useSelector} from 'react-redux'
 import {Button, Form, Col, Card} from 'react-bootstrap';
+import video from "../doctor1.mp4";
+
 
 
 const SignIn = () => {
@@ -42,6 +44,9 @@ const SignIn = () => {
 
     return(
         <div>
+            <video loop muted autoplay="">
+                <source src={video}/>
+            </video>
             <div className="sign-in-form">
             <Card style={{width: '25%'}}>
                 <Card.Body>

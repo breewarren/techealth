@@ -2,6 +2,8 @@ import React from 'react'
 import history from '../history'
 import {useDispatch, useSelector} from 'react-redux'
 import {Form, Col, Button, Card} from 'react-bootstrap'
+import video from "../doctor2.mp4";
+
 
 const SignUp = () => {
     const dispatch = useDispatch()
@@ -67,8 +69,11 @@ const SignUp = () => {
 
     return(
         <div>
+            <video loop muted autoplay="">
+                <source src={video}/>
+            </video>
             <div className="sign-up-form">
-            <Card style={{width: '50%'}}>
+            <Card style={{width: '15%'}}>
                 <Card.Body>
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Row>

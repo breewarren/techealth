@@ -221,6 +221,7 @@ const EncounterForm = () => {
 
     return(
         <div>
+
             <NavigationBar className="mp-profile"/>
             <div className="new-encounter-form">
             <Card style={{width: '99%'}}>
@@ -236,9 +237,9 @@ const EncounterForm = () => {
                                 <Form.Label>Patient</Form.Label>
                                 <Form.Control onChange={(e) => handlePatientChange(e)} as="select" defaultValue="">
                                     <option>Select Patient...</option>
-                                    {currentMedicalProvider.patients.map(patient => {
+                                    {/* {currentMedicalProvider.patients.map(patient => {
                                         return <option value={patient.id}>{patient.name}, MRN: {patient.mrn}</option>
-                                    })}
+                                    })} */}
                                 </Form.Control>
                             </Form.Group>
 

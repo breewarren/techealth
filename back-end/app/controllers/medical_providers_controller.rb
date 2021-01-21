@@ -13,10 +13,10 @@ class MedicalProvidersController < ApplicationController
     end
 
     #uses ID
-    # def show
-    #     medical_provider = MedicalProvider.find(params[:id])
-    #     render json: medical_provider, include: [:encounters, :patients, :diagnostics]
-    # end
+    def show
+        medical_provider = MedicalProvider.find(params[:id])
+        render json: medical_provider, include: [:encounters, :patients, :diagnostics]
+    end
 
     #sign up
     def create
