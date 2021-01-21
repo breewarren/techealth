@@ -29,7 +29,7 @@ const LandingPage = () => {
             <source src={video}/>
         </video>
         <div className="landing-page-card">
-            <Card wait={5000} style={{width: '25%'}}>
+            <Card style={{width: '25%'}}>
                 <span>
                 <Card.Header>techealth</Card.Header>
                 <br/>
